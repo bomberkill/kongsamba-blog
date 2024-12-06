@@ -1,0 +1,24 @@
+{
+    "header": {
+        "rights": "Tous droits reservés",
+        "follow": "Suivez nous ",
+        "sections": {
+            "link": "Liens utiles",
+            "home": "Accueil",
+            "section": {
+                "title": "Rubriques",
+                "subLinks": {
+                    "article": "Articles",
+                    "news": "Actualités",
+                    "breve": "Brèves",
+                    "cover": "Couverture",
+                    "playlist": "Playlists",
+                    "other": "Sports & Divers"
+                }
+            },
+            "about": "A propos",
+            "contact": "Contactez nous"
+        },
+        "button": "Se connecter"
+    }
+}

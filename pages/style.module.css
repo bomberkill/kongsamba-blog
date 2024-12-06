@@ -1,0 +1,15 @@
+.playlist {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.82) 25%, rgba(0, 0, 0, 0.82)), url("../public/images/cover.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    /* opacity: 0.7; */
+}
+/* .event {
+    background-image: url("../public/images/cover.jpg");
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+} */

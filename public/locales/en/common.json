@@ -1,0 +1,25 @@
+{
+    "header": {
+        "rights": "All rights reserved",
+        "follow": "Follow us ",
+        "sections": {
+            "home": "Home",
+            "link": "Usefuls links",
+            "section": {
+                "title": "Sections",
+                "subLinks": {
+                    "article": "Articles",
+                    "news": "News",
+                    "breve": "Briefs",
+                    "cover": "Cover",
+                    "playlist": "Playlists",
+                    "other": "Sports & Miscellaneous"
+                }
+            },
+            "about": "About Us",
+            "contact": "Contact Us"
+        },
+        "button": "Log In"
+    }
+    
+}
