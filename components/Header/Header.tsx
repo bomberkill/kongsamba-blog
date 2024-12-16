@@ -96,9 +96,9 @@ export default function Header() {
         {!smallScreen ? (
           <Group align="center" justify="space-between" gap={theme.spacing?.xl}>
             {data.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 {index === 1 ? (
-                  <HoverCard shadow="sm">
+                  <HoverCard key={index} shadow="sm">
                     <HoverCard.Target>
                       <Text
                         style={{ cursor: 'pointer' }}
@@ -123,15 +123,15 @@ export default function Header() {
                     </Text>
                   </Link>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </Group>
         ) : (
           <Stack align="center" gap={theme.spacing?.xs}>
             {data.map((item, index) => (
-              <>
+              <React.Fragment key={index}>
                 {index === 1 ? (
-                  <HoverCard shadow="sm">
+                  <HoverCard key={index} shadow="sm">
                     <HoverCard.Target>
                       <Text
                         style={{ cursor: 'pointer' }}
@@ -156,7 +156,7 @@ export default function Header() {
                     </Text>
                   </Link>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </Stack>
         )}
