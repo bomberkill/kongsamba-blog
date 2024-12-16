@@ -6,7 +6,7 @@ export default function Document() {
     <Html lang="en" suppressHydrationWarning>
       <Head>
         <ColorSchemeScript />
-        <link rel="shortcut icon" href="/logo.png" />
+        <link rel="shortcut icon" href="/logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

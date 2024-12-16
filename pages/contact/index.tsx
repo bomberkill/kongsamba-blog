@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import axios from 'axios';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import * as Yup from 'yup';
@@ -32,6 +33,7 @@ export default function Contact() {
     initialValues: initialsValues,
     validate: yupResolver(validationSchema),
   });
+  // const handleSubmit = async () => {};
 
   return (
     <Box pt="12vh">
@@ -42,7 +44,23 @@ export default function Contact() {
               {t('playlist-section')}
             </Text>
           </Title>
-          <form>
+          <form
+            onSubmit={contactForm.onSubmit(async () => {
+              console.log('debut send');
+              await axios
+                .post('/api/send-mail', {
+                  email: contactForm.values.email,
+                  message: contactForm.values.message,
+                  name: contactForm.values.name,
+                })
+                .then(() => {
+                  console.log('Mail successfully sent');
+                })
+                .catch((err) => {
+                  console.log('something went wrong: ', err);
+                });
+            })}
+          >
             <TextInput
               {...contactForm.getInputProps('name')}
               label={t('name')}

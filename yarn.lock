@@ -6874,6 +6874,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^6":
+  version: 6.4.17
+  resolution: "@types/nodemailer@npm:6.4.17"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/689abb3005cf36cf89c2abe56f0aa4469a37e0814633a73fbeb35732e856f4b0d7ab32b6d91585038b6941f5b70db58ec2bd147ebe9f73e528eb6c99604f4e82
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0":
   version: 2.4.3
   resolution: "@types/normalize-package-data@npm:2.4.3"
@@ -8139,6 +8148,17 @@ __metadata:
   version: 4.9.1
   resolution: "axe-core@npm:4.9.1"
   checksum: 10c0/ac9e5a0c6fa115a43ebffc32a1d2189e1ca6431b5a78e88cdcf94a72a25c5964185682edd94fe6bdb1cb4266c0d06301b022866e0e50dcdf6e3cefe556470110
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.7.9":
+  version: 1.7.9
+  resolution: "axios@npm:1.7.9"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/b7a41e24b59fee5f0f26c1fc844b45b17442832eb3a0fb42dd4f1430eb4abc571fe168e67913e8a1d91c993232bd1d1ab03e20e4d1fee8c6147649b576fc1b0b
   languageName: node
   linkType: hard
 
@@ -11705,6 +11725,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.9
+  resolution: "follow-redirects@npm:1.15.9"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 10c0/5829165bd112c3c0e82be6c15b1a58fa9dcfaede3b3c54697a82fe4a62dd5ae5e8222956b448d2f98e331525f05d00404aba7d696de9e761ef6e42fdc780244f
+  languageName: node
+  linkType: hard
+
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -11762,6 +11792,28 @@ __metadata:
   version: 0.2.0
   resolution: "forwarded@npm:0.2.0"
   checksum: 10c0/9b67c3fac86acdbc9ae47ba1ddd5f2f81526fa4c8226863ede5600a3f7c7416ef451f6f1e240a3cc32d0fd79fcfe6beb08fd0da454f360032bde70bf80afbb33
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^11.13.4":
+  version: 11.13.4
+  resolution: "framer-motion@npm:11.13.4"
+  dependencies:
+    motion-dom: "npm:^11.13.0"
+    motion-utils: "npm:^11.13.0"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/8ee9c27eebe0f7996927fed1aeb247a66d1e67f159d4a33fbf7af9764ffcb9d56e5b3e2e501399db2b522132dc7c8722470aa6ae92b7d4ce600e7edf9cc5a0cc
   languageName: node
   linkType: hard
 
@@ -14615,9 +14667,11 @@ __metadata:
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^20.14.8"
+    "@types/nodemailer": "npm:^6"
     "@types/react": "npm:18.3.3"
     "@typescript-eslint/eslint-plugin": "npm:^7.13.1"
     "@typescript-eslint/parser": "npm:^7.13.1"
+    axios: "npm:^1.7.9"
     babel-loader: "npm:^9.1.3"
     embla-carousel-autoplay: "npm:^8.5.1"
     embla-carousel-react: "npm:^8.5.1"
@@ -14631,6 +14685,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.34.3"
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-testing-library: "npm:^6.2.2"
+    framer-motion: "npm:^11.13.4"
     graphql: "npm:^16.9.0"
     i18next: "npm:^24.0.2"
     jest: "npm:^29.7.0"
@@ -14639,6 +14694,7 @@ __metadata:
     next: "npm:15.0.1"
     next-i18next: "npm:^15.4.0"
     next-sitemap: "npm:^4.2.3"
+    nodemailer: "npm:^6.9.16"
     postcss: "npm:^8.4.38"
     postcss-preset-mantine: "npm:1.17.0"
     postcss-simple-vars: "npm:^7.0.1"
@@ -15021,6 +15077,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"motion-dom@npm:^11.13.0":
+  version: 11.13.0
+  resolution: "motion-dom@npm:11.13.0"
+  checksum: 10c0/5ba904289ca027a8070e001ca4f84a877539d6b08eaae04acaf117b5fc4bc37a9f4ca812208b41f4dc61a2db7af841140b30517d442c32d5243827b81bb11db7
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^11.13.0":
+  version: 11.13.0
+  resolution: "motion-utils@npm:11.13.0"
+  checksum: 10c0/db65509cf7abc7819ec40aae4c50a29f5c07619ee0ff4df04ea3950e85ba5ec68d00cf0f2ef3072bd41787306335eab364de9d199c145631fafd9de39df1eef9
+  languageName: node
+  linkType: hard
+
 "mri@npm:^1.2.0":
   version: 1.2.0
   resolution: "mri@npm:1.2.0"
@@ -15325,6 +15395,13 @@ __metadata:
   version: 2.0.18
   resolution: "node-releases@npm:2.0.18"
   checksum: 10c0/786ac9db9d7226339e1dc84bbb42007cb054a346bd9257e6aa154d294f01bc6a6cddb1348fa099f079be6580acbb470e3c048effd5f719325abd0179e566fd27
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.9.16":
+  version: 6.9.16
+  resolution: "nodemailer@npm:6.9.16"
+  checksum: 10c0/9fd73ab4ab5b81544c3c9820afbe386369aba442f997b2f58d171222a898a7aed580fc100bfe6eebc194f18ba6e169d67ee40ca64d32d69022d89e575cef97a4
   languageName: node
   linkType: hard
 
@@ -16432,6 +16509,13 @@ __metadata:
     forwarded: "npm:0.2.0"
     ipaddr.js: "npm:1.9.1"
   checksum: 10c0/c3eed999781a35f7fd935f398b6d8920b6fb00bbc14287bc6de78128ccc1a02c89b95b56742bf7cf0362cc333c61d138532049c7dedc7a328ef13343eff81210
+  languageName: node
+  linkType: hard
+
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: 10c0/fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b
   languageName: node
   linkType: hard
 
