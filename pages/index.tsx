@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-// import NextImage from 'next/image';
+import NextImage from 'next/image';
 import Link from 'next/link';
 import { ApolloQueryResult } from '@apollo/client';
 import Autoplay from 'embla-carousel-autoplay';
@@ -29,6 +29,7 @@ import { useIntersection } from '@mantine/hooks';
 import LoadingAnimation from '@/components/LoadingAnimation/LoadingAnimation';
 import apolloClient from '@/lib/apolloClient';
 import classes from '@/pages/style.module.css';
+import empty from '@/public/images/message.png';
 // import { getClient } from '@/lib/apolloclient';
 import { GET_ALL_ARTICLES, GET_ALL_EVENTS, GET_ALL_PLAYLISTS } from '@/queries';
 import { theme } from '@/theme';
@@ -93,7 +94,7 @@ export default function HomePage({
   useEffect(() => {
     setTimeout(() => {
       setDelayOver(true);
-    }, 30000);
+    }, 3000);
   }, []);
   const handleImageLoad = () => {
     setImageFetching(false);
@@ -133,12 +134,11 @@ export default function HomePage({
             withControls={false}
             withIndicators
           >
-            {events.loading ||
-              (imageFetching && (
-                <CarouselSlide>
-                  <Skeleton w="100%" animate h="100%" />
-                </CarouselSlide>
-              ))}
+            {events.data.getAllEvents.length > 0 && imageFetching && (
+              <CarouselSlide>
+                <Skeleton w="100%" animate h="100%" />
+              </CarouselSlide>
+            )}
             {events.data.getAllEvents.length > 0 &&
               events.data.getAllEvents.map((event, index) => (
                 <CarouselSlide
@@ -170,7 +170,7 @@ export default function HomePage({
                 <Title ta="center" c="gray" order={3} title="Something went wrong!" />
               </CarouselSlide>
             )}
-            {events.data.getAllEvents.length <= 0 && (
+            {events.data.getAllEvents.length < 1 && (
               <CarouselSlide>
                 <Box
                   style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -223,7 +223,7 @@ export default function HomePage({
                   {t('articles-section')}
                 </Text>
               </Title>
-              <Group mih={500} align="center" gap={theme.spacing?.lg} justify="center">
+              <Group mih={400} align="center" gap={theme.spacing?.lg} justify="center">
                 {articles.loading ||
                   (articles.error && (
                     <>
@@ -340,7 +340,7 @@ export default function HomePage({
                       </Card>
                     </>
                   ))}
-                {articles.data &&
+                {articles.data.getAllArticles.length > 0 ? (
                   articles.data.getAllArticles.map((article, index) => (
                     <Transition
                       keepMounted={false}
@@ -398,7 +398,22 @@ export default function HomePage({
                         </Card>
                       )}
                     </Transition>
-                  ))}
+                  ))
+                ) : (
+                  <Stack align="center" gap={3}>
+                    <NextImage alt="" width={150} height={150} src={empty} />
+                    <Title
+                      pos="relative"
+                      w="90%"
+                      style={{ zIndex: 10 }}
+                      ta="center"
+                      c={theme.colors?.orange?.[5]}
+                      order={3}
+                    >
+                      {t('no-article')}
+                    </Title>
+                  </Stack>
+                )}
               </Group>
               <Center mt={theme.spacing?.xl}>
                 <Link style={{ textDecoration: 'none' }} href="/articles">
@@ -470,7 +485,7 @@ export default function HomePage({
                   {t('playlist-section')}
                 </Text>
               </Title>
-              <Group align="center" gap={theme.spacing?.lg} justify="center">
+              <Group mih={400} align="center" gap={theme.spacing?.lg} justify="center">
                 {playlists.loading ||
                   (playlists.error && (
                     <>
@@ -587,7 +602,7 @@ export default function HomePage({
                       </Card>
                     </>
                   ))}
-                {playlists.data &&
+                {playlists.data.getAllPlaylists.length > 0 ? (
                   playlists.data.getAllPlaylists.map((playlist, index) => (
                     <Transition
                       keepMounted={false}
@@ -636,7 +651,22 @@ export default function HomePage({
                         </Card>
                       )}
                     </Transition>
-                  ))}
+                  ))
+                ) : (
+                  <Stack align="center" gap={5}>
+                    <NextImage alt="" width={150} height={150} src={empty} />
+                    <Title
+                      pos="relative"
+                      w="90%"
+                      style={{ zIndex: 10 }}
+                      ta="center"
+                      c={theme.colors?.orange?.[5]}
+                      order={3}
+                    >
+                      {t('no-playlist')}
+                    </Title>
+                  </Stack>
+                )}
               </Group>
               <Center mt={theme.spacing?.xl}>
                 <Link style={{ textDecoration: 'none' }} href="/playlists">
@@ -667,7 +697,7 @@ export const getStaticProps: GetStaticProps = async ({ locale = 'fr' }) => {
     // const events = data?.getAllEvents || [];
     // const articles = articlesData.data?.getAllArticles || [];
     // const playlists = playlistData.data?.getAllPlaylists || [];
-    // console.log('fin result events: ', events);
+    console.log('fin result events: ', events);
     // console.log('fin result articles: ', articles);
     // console.log('fin result playlists: ', playlists);
     return {

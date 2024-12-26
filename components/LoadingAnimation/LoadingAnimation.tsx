@@ -11,8 +11,8 @@ export default function LoadingAnimation() {
     <Center pos="relative" w="100vw" h="100vh">
       <motion.div
         style={{
-          width: extraSmallScreen ? 50 : 75,
-          height: extraSmallScreen ? 50 : 75,
+          width: extraSmallScreen ? 50 : 65,
+          height: extraSmallScreen ? 50 : 65,
           borderRadius: '50%',
           position: 'absolute',
           backgroundColor: theme.colors?.orange?.[9],
@@ -25,7 +25,7 @@ export default function LoadingAnimation() {
         }}
       />
       {/* </motion.div> */}
-      <Box w={extraSmallScreen ? 50 : 75} h={extraSmallScreen ? 50 : 75}>
+      <Box w={extraSmallScreen ? 50 : 65} h={extraSmallScreen ? 50 : 65}>
         <Image
           style={{ position: 'relative' }}
           w="100%"
