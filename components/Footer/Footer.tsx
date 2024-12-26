@@ -88,7 +88,7 @@ export default function Footer() {
   ];
 
   const sections = data.map((link, linkIndex) => (
-    <Box w="100%">
+    <Box>
       <Link style={{ textDecoration: 'none' }} href={link.link} key={linkIndex}>
         <Text ta="center" className={classes.link} size="xs" fw={500}>
           {link.text}
@@ -97,7 +97,7 @@ export default function Footer() {
     </Box>
   ));
   const links = subLinks.map((sublink, linkIndex) => (
-    <Box w="100%">
+    <Box>
       <Link style={{ textDecoration: 'none' }} href={sublink.link} key={linkIndex}>
         <Text ta="center" className={classes.link} size="xs" fw={500}>
           {sublink.text}
