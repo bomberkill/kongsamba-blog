@@ -134,12 +134,12 @@ export default function HomePage({
             withControls={false}
             withIndicators
           >
-            {events.data.getAllEvents.length > 0 && imageFetching && (
+            { events.data != undefined && events.data.getAllEvents.length > 0 && imageFetching && (
               <CarouselSlide>
                 <Skeleton w="100%" animate h="100%" />
               </CarouselSlide>
             )}
-            {events.data.getAllEvents.length > 0 &&
+            { events.data != undefined && events.data.getAllEvents.length > 0 &&
               events.data.getAllEvents.map((event, index) => (
                 <CarouselSlide
                   w="100%"
@@ -170,7 +170,30 @@ export default function HomePage({
                 <Title ta="center" c="gray" order={3} title="Something went wrong!" />
               </CarouselSlide>
             )}
-            {events.data.getAllEvents.length < 1 && (
+            { events.data != undefined && events.data.getAllEvents.length < 1 && (
+              <CarouselSlide>
+                <Box
+                  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                  pos="relative"
+                  w="100%"
+                  mih={innerHeight}
+                  // mih={extraSmallScreen? "84vh" : "90vh"}
+                >
+                  <Skeleton pos="absolute" animate width="100%" height="100%" />
+                  <Title
+                    pos="relative"
+                    w="90%"
+                    style={{ zIndex: 10 }}
+                    ta="center"
+                    c={theme.colors?.orange?.[5]}
+                    order={1}
+                  >
+                    {t('no-event')}
+                  </Title>
+                </Box>
+              </CarouselSlide>
+            )}
+            { events.data == undefined && (
               <CarouselSlide>
                 <Box
                   style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -340,7 +363,7 @@ export default function HomePage({
                       </Card>
                     </>
                   ))}
-                {articles.data.getAllArticles.length > 0 ? (
+                { articles.data != undefined && articles.data.getAllArticles.length > 0 ? (
                   articles.data.getAllArticles.map((article, index) => (
                     <Transition
                       keepMounted={false}
@@ -416,7 +439,7 @@ export default function HomePage({
                 )}
               </Group>
               <Center mt={theme.spacing?.xl}>
-                <Link style={{ textDecoration: 'none' }} href="/articles">
+                <Link style={{ textDecoration: 'none' }} href="/posts">
                   <Button variant="gradient" gradient={{ from: 'pink', to: 'yellow' }}>
                     {t('see-more')}
                   </Button>
@@ -487,7 +510,7 @@ export default function HomePage({
               </Title>
               <Group mih={400} align="center" gap={theme.spacing?.lg} justify="center">
                 {playlists.loading ||
-                  (playlists.error && (
+                  ( playlists.error && (
                     <>
                       <Card shadow="sm" padding="lg" radius="md" withBorder>
                         <Skeleton animate>
@@ -602,7 +625,7 @@ export default function HomePage({
                       </Card>
                     </>
                   ))}
-                {playlists.data.getAllPlaylists.length > 0 ? (
+                { playlists.data != undefined && playlists.data.getAllPlaylists.length > 0 ? (
                   playlists.data.getAllPlaylists.map((playlist, index) => (
                     <Transition
                       keepMounted={false}
