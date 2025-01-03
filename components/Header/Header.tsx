@@ -58,19 +58,19 @@ export default function Header() {
     const subLinks = [
       {
         text: t('header.sections.section.subLinks.article'),
-        link: '/articles',
+        link: '/posts#articles',
       },
       {
         text: t('header.sections.section.subLinks.news'),
-        link: '/news',
+        link: '/posts#news',
       },
       {
         text: t('header.sections.section.subLinks.breve'),
-        link: '/breve',
+        link: '/posts#breves',
       },
       {
         text: t('header.sections.section.subLinks.cover'),
-        link: '/cover',
+        link: '/posts#covers',
       },
       {
         text: t('header.sections.section.subLinks.playlist'),
@@ -78,7 +78,7 @@ export default function Header() {
       },
       {
         text: t('header.sections.section.subLinks.other'),
-        link: '/sports',
+        link: '/posts#sports',
       },
     ];
     const links = subLinks.map((sublink, linkIndex) => (
