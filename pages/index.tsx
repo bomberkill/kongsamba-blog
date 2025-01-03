@@ -1,4 +1,3 @@
-// "use client";
 import { useEffect, useRef, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';

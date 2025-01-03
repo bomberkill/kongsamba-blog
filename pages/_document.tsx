@@ -3,7 +3,7 @@ import { ColorSchemeScript } from '@mantine/core';
 
 export default function Document() {
   return (
-    <Html lang="en" suppressHydrationWarning>
+    <Html lang="fr" suppressHydrationWarning>
       <Head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/logo.svg" />
